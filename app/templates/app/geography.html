@@ -1,72 +1,15 @@
+{% extends 'app/base.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>География</title>
-  <link rel="shortcut icon" href="../../static/app/img/Logo-csharp.webp" type="image/png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
-    rel="stylesheet">
-  <link rel="stylesheet" href="../../static/app/css/normalize.css">
-  <link rel="stylesheet" href="../../static/app/css/fonts.css">
-  <link rel="stylesheet" href="../../static/app/css/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="../../static/app/css/slick.css">
-  <link rel="stylesheet" href="../../static/app/css/jquery.formstyler.css">
-  <link rel="stylesheet" href="../../static/app/css/style.css">
-  <link rel="stylesheet" href="../../static/app/css/media.css">
-</head>
-<body>
-    <header class="header">
-    <div class="header__top">
-      <div class="container">
-      <!--        -->
-        <div class="hamburger-menu">
-          <input id="menu__toggle" type="checkbox" />
-          <label class="menu__btn" for="menu__toggle">
-            <span></span>
-          </label>
-          <ul class="menu__box">
-            <li><a class="menu__item" href="index.html">Главная</a></li>
-            <li><a class="menu__item" href="demand.html">Востребованность</a></li>
-            <li><a class="menu__item" href="geography.html">География</a></li>
-            <li><a class="menu__item" href="skills.html">Навыки</a></li>
-            <li><a class="menu__item" href="recentv.html">Последние вакансии</a></li>
-          </ul>
-        </div>
-        <!--        -->
-        <div class="header__contacts">
-          <a class="header__phone" href="tel:73433776644">+7 343 377 66 44</a>
-          <a class="header__email" href="#">Roman.Shchepin@urfu.me</a>
-          <a data-fancybox data-src="#modal__request" href="javascript:;" class="header__btn" href="#">По всем вопросам</a>
-        </div>
-      </div>
-    </div>
 
-    <div class="header__content">
-      <div class="container">
-        <div class="header__content-inner">
-          <div class="header__logo">
-            <a href="#">
-              <img src="../../static/app/img/Logo-csharp.webp" width=70 alt="">
-            </a>
-          </div>
-          <nav class="menu">
-            <div class="header__btn-menu">
-              <span class="icon-bars"></span>
-            </div>
-            <ul>
-              <li><a href="index.html">Главная</a></li>
-              <li><a href="demand.html" data-fancybox data-src="#modal__demand" href="javascript:;">Востребованность</a></li>
-              <li><a href="geography.html" data-fancybox data-src="#modal__geography" href="javascript:;">География</a></li>
-              <li><a href="skills.html" data-fancybox data-src="#modal__skills" href="javascript:;">Навыки</a></li>
-              <li><a href="recentv.html" data-fancybox data-src="#modal__recentv" href="javascript:;">Последние вакансии</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
+<head>
+</head>
+
+<body>
+    {% block content %}
+
+    {% endblock content %}
 </body>
+
 </html>
