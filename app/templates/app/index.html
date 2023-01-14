@@ -1,22 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <title>Профессия C#-программиста</title>
-  <link rel="shortcut icon" href="img/Logo-csharp.webp" type="image/png">
+  <link rel="shortcut icon" href="{% static "app/img/Logo-csharp.webp" %}" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="css/slick.css">
-  <link rel="stylesheet" href="css/jquery.formstyler.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/media.css">
+  <link rel="stylesheet" href="{% static "app/css/normalize.css" %}">
+  <link rel="stylesheet" href="{% static "app/css/fonts.css" %}">
+  <link rel="stylesheet" href="{% static "app/css/jquery.fancybox.min.css" %}">
+  <link rel="stylesheet" href="{% static "app/css/slick.css" %}">
+  <link rel="stylesheet" href="{% static "app/css/jquery.formstyler.css" %}">
+  <link rel="stylesheet" href="{% static "app/css/style.css" %}">
+  <link rel="stylesheet" href="{% static "app/css/media.css" %}">
 </head>
 
 <body>
@@ -51,7 +52,7 @@
         <div class="header__content-inner">
           <div class="header__logo">
             <a href="#">
-              <img src="img/Logo-csharp.webp" width=70 alt="">
+              <img src="../../static/app/img/Logo-csharp.webp" width=70 alt="">
             </a>
           </div>
           <nav class="menu">
@@ -157,7 +158,7 @@
       </div>
       <div class="services__items">
         <div class="services__item">
-          <img src="img/junior.png" alt="" width="40%">
+          <img src="../../static/app/img/junior.png" alt="" width="40%">
           <div class="services__item-title">
             Junior C# developer
           </div>
@@ -171,7 +172,7 @@
           </div>
         </div>
         <div class="services__item">
-          <img src="img/middle.png" alt="" width="40%">
+          <img src="../../static/app/img/middle.png" alt="" width="40%">
           <div class="services__item-title">
             Middle C# developer
           </div>
@@ -185,7 +186,7 @@
           </div>
         </div>
         <div class="services__item">
-          <img src="img/senior.png" alt="" width="40%">
+          <img src="../../static/app/img/senior.png" alt="" width="40%">
           <div class="services__item-title">
             Senior C# developer
           </div>
@@ -349,7 +350,7 @@
         </div>
         <a href="https://3dnews.ru/987109/microsoft-gotovitnet-5-s-poddergkoy-macos-linux-i-android" class="news__blog">
           <div class="news__images">
-            <img src="img/news-1.jpg" alt="">
+            <img src="../../static/app/img/news-1.jpg" alt="">
             <div class="news__date">25.01</div>
           </div>
           <div class="news__blog-title">
@@ -363,7 +364,7 @@
         %BE%D0%BC%D0%BD%D1%8B%D0%B9-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D1%89%D0%B8%D0%BA-%D0%B4%D0%BB%D1%8F-
         windows-9d23f658-3b97-68ab-d013-aa3c3e7495e0" class="news__blog">
           <div class="news__images">
-            <img src="img/news-2.jpg" alt="">
+            <img src="../../static/app/img/news-2.jpg" alt="">
             <div class="news__date">25.01</div>
           </div>
           <div class="news__blog-title">
@@ -415,10 +416,10 @@
   </footer>
     
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="js/jquery.fancybox.min.js"></script>
-  <script src="js/slick.min.js"></script>
-  <script src="js/jquery.formstyler.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="../../static/app/js/jquery.fancybox.min.js"></script>
+  <script src="../../static/app/js/slick.min.js"></script>
+  <script src="../../static/app/js/jquery.formstyler.min.js"></script>
+  <script src="../../static/app/js/main.js"></script>
 
 
 
