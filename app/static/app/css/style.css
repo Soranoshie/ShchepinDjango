@@ -996,3 +996,14 @@ header{
 }
 /**/
 
+.graph__item {
+  text-align: center;
+}
+
+.table__item {
+  text-align: center;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin: 20px;
+}
+

@@ -4,18 +4,12 @@ from .models import *
 
 def index(request):
     return render(request, 'app/index.html', {'title': "Профессия C#-программиста"})
-    # data = {
-    #     'professions': Profession.objects.get(id=1)
-    # }
-    # return render(request, 'app/index.html', context=data)
 
 
 def demand(request):
-    return render(request, 'app/demand.html', {'title': "Востребованность"})
-    # data = {
-    #     'professions': Profession.objects.get(id=1)
-    # }
-    # return render(request, 'app/demand.html', context=data)
+    db_headers = ["Год", "Средняя зарплата", "Средняя зарплата - C#", "Количество вакансий", "Количество вакансий - C#"]
+    db = Demand_models.objects.all()
+    return render(request, 'app/demand.html',  {'title': "Востребованность", 'db': db, 'db_headers': db_headers})
 
 
 def geography(request):
