@@ -24,15 +24,7 @@ def geography(request):
 
 def skills(request):
     return render(request, 'app/skills.html', {'title': "Навыки"})
-    # data = {
-    #     'professions': Profession.objects.get(id=1)
-    # }
-    # return render(request, 'app/skills.html', context=data)
 
 
 def recentv(request):
     return render(request, 'app/recentv.html', {'title': "Последние вакансии"})
-    # data = {
-    #     'professions': Profession.objects.get(id=1)
-    # }
-    # return render(request, 'app/recentv.html', context=data)

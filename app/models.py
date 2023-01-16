@@ -1,18 +1,6 @@
 from django.db import models
 
 
-class Profession(models.Model):
-    title = models.CharField('Название', max_length=50)
-    description = models.TextField('Описание')
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name = 'Профессия'
-        verbose_name_plural = 'Профессии'
-
-
 class Demand_models(models.Model):
     year = models.IntegerField('Год', max_length=4)
     average_salary = models.IntegerField('Средняя зарплата', max_length=10)
@@ -26,6 +14,8 @@ class Demand_models(models.Model):
     class Meta:
         verbose_name = 'Востребованность'
         verbose_name_plural = 'Востребованность'
+        ordering = ['year', 'average_salary', 'average_salary_profession', 'count_vacancies',
+                    'count_vacancies_profession']
 
 
 class Geography_models_salary(models.Model):
@@ -38,6 +28,7 @@ class Geography_models_salary(models.Model):
     class Meta:
         verbose_name = 'Георграфия - зарплата'
         verbose_name_plural = 'Георграфия - зарплата'
+        ordering = ['-salary_level', 'town']
 
 
 class Geography_models_vacancy(models.Model):
@@ -50,3 +41,4 @@ class Geography_models_vacancy(models.Model):
     class Meta:
         verbose_name = 'Георграфия - вакансии'
         verbose_name_plural = 'Георграфия - вакансии'
+        ordering = ['-vacancy_rate', 'town']
