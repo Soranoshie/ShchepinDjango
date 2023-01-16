@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import *
-
+from api import *
 
 def index(request):
     return render(request, 'app/index.html', {'title': "Профессия C#-программиста"})
