@@ -9,6 +9,48 @@
 <body>
     {% block content %}
 
+        <div class="container">
+            <div class="services__top">
+              <div class="services__title-box">
+                <div class="services__title">
+                  {{ title }}
+                </div>
+              </div>
+            </div>
+            <div class="graph__item">
+                <img src="../../static/app/img/graph_towns.png" alt="" width="80%">
+            </div>
+            <div class="table__item">
+                <table border="1" cellspacing="0" align="center" width="70%">
+                    <tr>
+                        {% for header in db_headers_salary %}
+                        <td>{{ header }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% for field in db_salary %}
+                        <tr>
+                            <td>{{ field.town }}</td>
+                            <td>{{ field.salary_level }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <br><br>
+                <table border="1" cellspacing="0" align="center" width="70%">
+                    <tr>
+                        {% for header in db_headers_vacancy %}
+                        <td>{{ header }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% for field in db_vacancy %}
+                        <tr>
+                            <td>{{ field.town }}</td>
+                            <td>{{ field.vacancy_rate }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+          </div>
+
     {% endblock content %}
 </body>
 

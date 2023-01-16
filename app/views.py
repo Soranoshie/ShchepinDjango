@@ -13,11 +13,13 @@ def demand(request):
 
 
 def geography(request):
-    return render(request, 'app/geography.html', {'title': "География"})
-    # data = {
-    #     'professions': Profession.objects.get(id=1)
-    # }
-    # return render(request, 'app/geography.html', context=data)
+    db_headers_salary = ["Город", "Уровень зарплат"]
+    db_headers_vacancy = ["Город", "Доля вакансий"]
+    db_salary = Geography_models_salary.objects.all()
+    db_vacancy = Geography_models_vacancy.objects.all()
+    return render(request, 'app/geography.html', {'title': "География", 'db_salary': db_salary,
+                'db_vacancy': db_vacancy, 'db_headers_salary': db_headers_salary,
+                'db_headers_vacancy': db_headers_vacancy})
 
 
 def skills(request):

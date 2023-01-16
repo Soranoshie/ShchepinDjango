@@ -28,3 +28,25 @@ class Demand_models(models.Model):
         verbose_name_plural = 'Востребованность'
 
 
+class Geography_models_salary(models.Model):
+    town = models.CharField('Город', max_length=20)
+    salary_level = models.IntegerField('Уровень зарплат', max_length=10)
+
+    def __str__(self):
+        return self.town
+
+    class Meta:
+        verbose_name = 'Георграфия - зарплата'
+        verbose_name_plural = 'Георграфия - зарплата'
+
+
+class Geography_models_vacancy(models.Model):
+    town = models.CharField('Город', max_length=20)
+    vacancy_rate = models.CharField('Доля вакансий', max_length=7)
+
+    def __str__(self):
+        return self.town
+
+    class Meta:
+        verbose_name = 'Георграфия - вакансии'
+        verbose_name_plural = 'Георграфия - вакансии'

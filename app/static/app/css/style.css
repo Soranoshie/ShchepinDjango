@@ -1005,5 +1005,6 @@ header{
   table-layout: fixed;
   border-collapse: collapse;
   margin: 20px;
+  padding: 20px;
 }
 
