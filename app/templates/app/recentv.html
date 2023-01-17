@@ -8,6 +8,31 @@
 
 <body>
     {% block content %}
+        <div class="container">
+            <div class="services__top">
+              <div class="services__title-box">
+                <div class="services__title">
+                  {{ title }}
+                </div>
+              </div>
+            </div>
+
+            {% for v in vacancy %}
+                <div class="vacancies">
+                    <div class="vacancies__name">{{ v.name }}</div>
+                    <div class="vacancies__item">{{ v.description }}</div>
+                    <div class="vacancies__item">Ключевые навыки: {{ v.key_skills }}</div>
+                    <div class="vacancies__item">Компания/работодатель: {{ v.employer }}</div>
+                    <div class="vacancies__item">Нижняя граница оклада: {{ v.salary_from }}</div>
+                    <div class="vacancies__item">Верхняя граница оклада: {{ v.salary_to }}</div>
+                    <div class="vacancies__item">Валюта: RUR</div>
+                    <div class="vacancies__item">Город: {{ v.area_name }}</div>
+                    <div class="vacancies__item">Дата публикации: {{ v.published_at }}</div>
+                </div>
+
+            {% endfor %}
+
+        </div>
 
     {% endblock content %}
 </body>
