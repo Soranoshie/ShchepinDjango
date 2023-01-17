@@ -27,4 +27,5 @@ def skills(request):
 
 
 def recentv(request):
+
     return render(request, 'app/recentv.html', {'title': "Последние вакансии"})
