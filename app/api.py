@@ -1,36 +1,27 @@
 import json
 import re
 import time
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 import requests
 
 class VacancyParser:
 
-    hour_delta = 4
-
     @staticmethod
-    def get_vacancies_by_date(date: datetime):
+    def get_vacancies_by_date():
         vacancies = []
-        for hour in range(0, 24, VacancyParser.hour_delta):
-            begin_date = datetime(date.year, date.month, date.day, hour=hour)
-            if hour + VacancyParser.hour_delta > 23:
-                end_date = datetime.today()
-            else:
-                end_date = datetime(date.year, date.month, date.day, hour=hour + VacancyParser.hour_delta)
-            first_page_info = VacancyParser.get_vacancies_info_by_page(0, begin_date, end_date)
-            total_pages_count = first_page_info["pages"]
-            vacancies.extend(map(VacancyParser.get_formatted_vacancy, first_page_info["items"]))
-            for page in range(1, total_pages_count):
-                vacancies.extend(map(VacancyParser.get_formatted_vacancy,
-                                     VacancyParser.get_vacancies_info_by_page(page, begin_date, end_date)["items"]))
-                time.sleep(0.2)
+        begin_date = datetime.today() - timedelta(days=1)
+        end_date = datetime.today()
+        first_page_info = VacancyParser.get_vacancies_info_by_page(begin_date, end_date)
+        vacancies.extend(map(VacancyParser.get_formatted_vacancy, first_page_info["items"]))
+        vacancies.extend(map(VacancyParser.get_formatted_vacancy, VacancyParser.get_vacancies_info_by_page(begin_date,
+                                                                                                end_date)["items"]))
         return vacancies
 
     @staticmethod
-    def get_vacancies_info_by_page(page: int, begin_date: datetime, end_date: datetime):
+    def get_vacancies_info_by_page(begin_date: datetime, end_date: datetime):
         begin_date_str = begin_date.strftime("%Y-%m-%dT%H:%M:%S")
         end_date_str = end_date.strftime("%Y-%m-%dT%H:%M:%S")
-        params = {"page": page, "per_page": 100, "date_from": begin_date_str, "date_to": end_date_str,
+        params = {"page": 0, "per_page": 10, "date_from": begin_date_str, "date_to": end_date_str,
                   "specialization": 1, "text": "NAME:C#", "only_with_salary": True, "currency": "RUR"}
         req = requests.get("https://api.hh.ru/vacancies", params)
         req.close()
@@ -91,8 +82,3 @@ class VacancyParser:
         new_vacancy["published_at"] = datetime.strptime(vacancy["published_at"], "%Y-%m-%dT%H:%M:%S%z").date()
 
         return new_vacancy
-
-
-date_to_parse = datetime(2023, 1, 16)
-vacancies = VacancyParser.get_vacancies_by_date(date_to_parse)
-print(vacancies)

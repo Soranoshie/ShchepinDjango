@@ -29,7 +29,6 @@ def skills(request):
 
 
 def recentv(request):
-    date_to_parse = datetime(2023, 1, 17)
-    vacancy = VacancyParser.get_vacancies_by_date(date_to_parse)[:10]
+    vacancy = VacancyParser.get_vacancies_by_date()[:10]
 
     return render(request, 'app/recentv.html', {'title': "Последние вакансии", 'vacancy': vacancy})
